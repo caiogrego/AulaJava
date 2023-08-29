@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
   public class MeuProjeto {
     static String nome;
@@ -21,6 +22,30 @@
         System.out.println(texto + esteProjeto.peso);
         meuMetodo("" + esteProjeto.idade + esteProjeto.peso);
         meuMetodo(esteProjeto.idade + esteProjeto.peso + "");
+
+        //System.out.print("Digite um texto: ");
+        //Scanner sc = new Scanner(System.in);
+        //String valorDigitado = sc.nextLine(); // Lê o teclado.
+        //sc.close();
+
+        // Exibe o valor digitado pelo teclado.
+        //System.out.println(valorDigitado);
+        esteProjeto.lerDouble();
+    }
+
+    public void lerDouble() {
+      System.out.print("Digite um numero real: ");
+      Scanner sc = new Scanner(System.in);
+      String valorString = sc.nextLine();
+      sc.close();
+      Double valorDouble = 0.0;
+      try {
+        valorDouble = Double.parseDouble(valorString);
+      } catch (Exception e) {
+        System.out.println("Erro ao converter!!");
+      }
+      valorDouble += 100;
+      System.out.print("Valor com a soma de 100: " + valorDouble);
     }
 
     public static String getNome() {
